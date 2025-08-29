@@ -25,4 +25,41 @@ year={2025}
 }
 ```
 
-## Compilation
+## 🚀 Execution
+
+To compile and run the project, you must execute the `main.py` file with the following parameters:
+
+### Compilation Parameters
+
+- `--dataset` → Indicates the training dataset.  
+  Possible values:
+  - `SEM`
+  - `AMI`
+  - `HAS`
+
+- `--subtask` → Defines the training subtask.  
+  Possible values:
+  - `A`
+  - `B`
+
+- `--model` → Specifies the model used for training.  
+  Possible values:
+  - `"roberta-base"`
+  - `"nghuyong/ernie-2.0-base-en"`
+  - `"bert-base-uncased"`
+  - `"distilbert-base-uncased"`
+
+- `--architecture_mode` → Defines the architecture used in training.  
+  Possible values:
+  - `MHG` → Multi-head GAttention mechanism (12 heads, best configuration).  
+  - `GAT` → Standard GAttention mechanism.  
+  - `NON` → No attention mechanism included; only fine-tuning with the selected model.
+
+---
+
+## 📌 Example Usage
+
+If you want to train on **subtask B** of the **AMI dataset**, using the `nghuyong/ernie-2.0-base-en` model with the **GAttention** architecture, the command would be:
+
+```bash
+python3 main.py --dataset AMI --subtask B --model nghuyong/ernie-2.0-base-en --architecture_mode GAT
